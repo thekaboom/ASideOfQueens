@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 h3 span::before {
-  content: "";
+  content: "BRUNCH";
   color: #aa3939;
   -webkit-animation: profile 5s infinite;
           animation: profile 5s infinite;
@@ -183,8 +183,7 @@ section {
   color: white;
 }
 .coming_content h2 {
-  font-size: 0.01em;
-  margin: 0;
+  font-size: 10px;
   text-align: center;
   color: white;
 }

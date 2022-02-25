@@ -1,82 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
-h3 span::before {
-  content: "BRUNCH";
-  color: #aa3939;
-  -webkit-animation: profile 5s infinite;
-          animation: profile 5s infinite;
+.changing-text {
+  color: #d43949;
+  font-weight: 800;
+  font-size: 1em;
+  line-height: 0.9em;
+  margin-left: 0.15em;
+  margin-right: 0.15em;
+  margin-top: 0.15em;
+  padding-left: 0.125em;
+  padding-right: 0.125em;
+  text-transform: bold;
+  will-change: width;
 }
 
-@-webkit-keyframes profile {
-  0% {
-    content: "BRUNCH";
-  }
-  10% {
-    content: "BRUNCH";
-  }
-  20% {
-    content: "MIMOSAS";
-  }
-  30% {
-    content: "MIMOSAS";
-  }
-  40% {
-    content: "EVENTS";
-  }
-  50% {
-    content: "EVENTS";
-  }
-  60% {
-    content: "PRIVATE PARTIES";
-  }
-  70% {
-    content: "PRIVATE PARTIES";
-  }
-  80% {
-    content: "DINNER";
-  }
-  90% {
-    content: "DINNER";
-  }
-  100% {
-    content: "BRUNCH";
-  }
-}
-
-@keyframes profile {
-  0% {
-    content: "BRUNCH";
-  }
-  10% {
-    content: "BRUNCH";
-  }
-  20% {
-    content: "MIMOSAS";
-  }
-  30% {
-    content: "MIMOSAS";
-  }
-  40% {
-    content: "EVENTS";
-  }
-  50% {
-    content: "EVENTS";
-  }
-  60% {
-    content: "PRIVATE PARTIES";
-  }
-  70% {
-    content: "PRIVATE PARTIES";
-  }
-  80% {
-    content: "DINNER";
-  }
-  90% {
-    content: "DINNER";
-  }
-  100% {
-    content: "BRUNCH";
-  }
-}
 @font-face {
   font-family: "bebas_neueregular";
   src: url("https://dl.dropboxusercontent.com/u/81135676/bebasneue_regular-webfont.eot");
@@ -152,7 +88,7 @@ section {
   position: relative;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, #efb5bb, #d43949);
+  background-image: url(https://i.ibb.co/x3Z0N8G/brunch2bwhiteg.png), radial-gradient(circle, #efb5bb, #d43949);
 }
 
 #SideQueens {
@@ -169,23 +105,23 @@ section {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   color: white;
   text-align: center;
   z-index: 101;
 }
 .coming_content h1 {
-  font-size: 5em;
+  font-size: 4.6875em;
   margin: 0;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-align: center;
   color: white;
 }
 .coming_content h2 {
   font-size: 10px;
   text-align: center;
-  color: white;
+  color: #d43949;
 }
 .coming_content .separator_container {
   width: 100%;
@@ -228,7 +164,7 @@ section {
   letter-spacing: 2px;
   line-height: 2;
   font-size: 1em;
-  font-weight: 400;
+  font-weight: 100;
   text-align: center;
   margin: 0;
 }

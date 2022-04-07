@@ -1,90 +1,104 @@
-var canvas = document.getElementById('SideQueens');
-var ctx = canvas.getContext('2d');
-var particles = [];
-var particleCount = 280;
+'use strict';
 
-for (var i = 0; i < particleCount; i++) {
-  particles.push(new particle());
+const togglebar = document.querySelector('.bar');
+const toggle = document.querySelector('.toggle');
+const menu = document.querySelector('.menu');
+const menulinks = document.querySelectorAll('.menu a');
+
+let togglefunc = () => {
+  toggle.classList.toggle('open');
+  menu.classList.toggle('open');
 }
 
-function particle() {
-  this.x = Math.random() * canvas.width;
-  this.y = canvas.height + Math.random() * 300;
-  this.speed = 1 + Math.random();
-  this.radius = Math.random() * 3;
-  this.opacity = (Math.random() * 100) / 1000;
+togglebar.onclick = togglefunc;
+
+menulinks.forEach((e) => {
+  e.onclick = togglefunc;
+});
+
+
+
+const VW = window.innerWidth;
+const VH = window.innerHeight;
+
+let getContext = (w, h, c) => {
+  let canvas = document.createElement("canvas");
+  canvas.classList.add('header-canvas');
+  document.querySelector('header').appendChild(canvas);
+  canvas.width = w || window.innerWidth;
+  canvas.height = h || window.innerHeight;
+  return canvas.getContext("2d");
 }
 
-function loop() {
-  requestAnimationFrame(loop);
-  draw();
-}
+const ctx = getContext(VW, VH);
 
-function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.globalCompositeOperation = 'lighter';
-  for (var i = 0; i < particles.length; i++) {
-    var p = particles[i];
+class Particle {
+  constructor(x,y,radius,opacity) {
+    this.x = x;
+    this.y = y;
+    this.vx = 0;
+    this.vy = 0;
+    this.radius = 0;
+    this.targetRadius = radius;
+    this.opacity = 0;
+    this.targetOpacity = opacity;
+    this.waxing = true;
+  }
+
+  move() {
+    this.vy -= 0.005;
+    this.y += this.vy;
+
+    this.radius += (this.targetRadius - this.radius) / 50;
+    this.opacity += (this.targetOpacity - this.opacity) / 50;
+
+    if (this.y < 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  draw(ctx) {
     ctx.beginPath();
-    ctx.fillStyle = 'rgba(255,255,255,' + p.opacity + ')';
-    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2, false);
+    ctx.moveTo(this.x, this.y);
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,255,255,${this.opacity / 100})`;
     ctx.fill();
-    p.y -= p.speed;
-    if (p.y <= -10)
-      particles[i] = new particle();
   }
 }
-loop();
 
-const editable = document.querySelector('.changing-text');
+const particles = [];
 
-const words = [
-  'BRUNCH',
-  'MIMOSAS',
-  'EVENTS',
-  'PARTIES',
-  'DINNER',
-  'CONCERTS',
-  'MUSICALS',
-  'LUNCH',
-];
-const animationTimeInms = 15;
-const delayInms = 1000;
+let update = () => {
+  let s = Math.round(Math.random() * 100);
+  if (s < 10) {
+    let p = new Particle(Math.round(Math.random() * VW), Math.round(Math.random() * VH), Math.ceil(Math.random() * 3), Math.round(Math.random() * 50 + 25));
+    particles.push(p);
+  }
 
-function close(index) {
-  editable.textContent = words[index % words.length];
-  const interval = setInterval(function() {
-    const text = editable.textContent;
-    if (!text) {
-      clearInterval(interval);
-      setTimeout(function() {
-        open(++index);
-      }, 100);
+
+  let a = [];
+  particles.forEach((e) => {
+    if (!e.move()) {
+      a.push(e);
     }
-    editable.textContent = text.slice(0, -1);
-  }, animationTimeInms);
+  })
+  particles.length = 0;
+  a.forEach((e) => {
+    particles.push(e);
+  })
 }
 
-function open(index) {
-  const initialText = words[index % words.length];
-  let i = 1;
-  editable.textContent = '';
-  const interval = setInterval(function() {
-    const text = editable.textContent;
-    console.log(text.length === initialText.length);
-    if (text.length === initialText.length) {
-      clearInterval(interval);
-      setTimeout(function() {
-        close(index);
-      }, delayInms);
-    }
-    editable.textContent = initialText.slice(0, i++);
-  }, animationTimeInms);
+let draw = () => {
+  ctx.clearRect(0,0,VW,VH);
+
+  particles.forEach((e) => {
+    e.draw(ctx);
+  });
 }
 
-function writeWords() {
-  const i = 0;
-  open(i);
-}
-
-writeWords();
+let frame = setInterval(() => {
+  update();
+  draw();
+}, 16); // ~60fps

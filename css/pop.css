@@ -9,7 +9,7 @@
   height: 70%;
   top: 40%;
   margin-top: -100px;
-  background: #FFF;
+  background: black;
   z-index: 20;
 }
 
@@ -25,7 +25,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(0,0,0,0.5);
+  background: black;
   z-index: -2;
 }
 
@@ -36,7 +36,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background: #FFF;
+  background: black;
   z-index: -1;
 }
 
@@ -56,3 +56,5 @@ p {
 p+p+p {
 	font-size: 60%;
 }
+
+

@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
-  --blue: #007bff;
+  --blue: #c13854;
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
@@ -18,10 +18,10 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: black;
+  --primary: #007bff;
   --secondary: #6c757d;
   --success: #28a745;
-  --info: #17a2b8;
+  --info: #c13854;
   --warning: #ffc107;
   --danger: #dc3545;
   --light: #f8f9fa;
@@ -42,7 +42,7 @@
 }
 
 html {
-	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif;
+	font-family: Verdana, sans-serif;
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -54,13 +54,13 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
 	margin: 0;
-	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-family: abel;
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5;
 	color: white;
 	text-align: left;
-
+	font-style: normal;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -71,7 +71,7 @@ hr {
 	box-sizing: content-box;
 	height: 0;
 	overflow: visible;
-	font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, serif;
+	font-family: "Arial Black", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -106,7 +106,6 @@ ul,
 dl {
   margin-top: 0;
   margin-bottom: 1rem;
-	color: white;
 }
 
 ol ol,
@@ -544,7 +543,14 @@ pre code {
   max-height: 340px;
   overflow-y: scroll;
 }
-
+.containerfoot {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+	background-color: #517dd1;
+}
 .container {
   width: 100%;
   padding-right: 15px;
@@ -578,9 +584,8 @@ pre code {
 }
 
 .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  width: 60%;
+
   margin-right: auto;
   margin-left: auto;
 }
@@ -2559,33 +2564,33 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: black;
+  background-color: #007bff;
   border-color: #007bff;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: black;
-  border-color: black;
+  background-color: #0069d9;
+  border-color: #0062cc;
 }
 
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: black;
-  border-color: black;
+  background-color: #0069d9;
+  border-color: #0062cc;
   box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
 }
 
 .btn-primary.disabled, .btn-primary:disabled {
   color: #fff;
-  background-color: black;
+  background-color: #007bff;
   border-color: #007bff;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: black;
+  background-color: #0062cc;
   border-color: #005cbf;
 }
 
@@ -2596,7 +2601,7 @@ fieldset:disabled a.btn {
 
 .btn-secondary {
   color: #fff;
-  background-color: black;
+  background-color: #6c757d;
   border-color: #6c757d;
 }
 
@@ -4718,8 +4723,11 @@ input[type="button"].btn-block {
 .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
   color: #fff;
 }
-
-.card {
+.motherst {
+  
+}
+.card1 {
+	background-color: #2F539F;
   position: relative;
   display: -ms-flexbox;
   display: flex;
@@ -4731,6 +4739,53 @@ input[type="button"].btn-block {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 	text-align: left;
+	color:;
+}
+.card2 {
+	background-color:#C81D46;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+	text-align: left;
+	
+}
+
+.cardpride {
+background-image: url(https://static.brusheezy.com/system/resources/previews/000/050/237/non_2x/gay-pride-gradient-photoshop-gradients.jpg);
+	position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+	text-align: left;
+	color:black;
+}
+.card {
+	background-color: ;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+	text-align: left;
+	text-
 }
 
 .card > hr {
@@ -5122,7 +5177,7 @@ a.badge:hover, a.badge:focus {
 
 a.badge-primary:hover, a.badge-primary:focus {
   color: #fff;
-  background-color: black;
+  background-color: #0062cc;
 }
 
 a.badge-primary:focus, a.badge-primary.focus {
@@ -6417,9 +6472,9 @@ a.close.disabled {
   margin-right: -100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transition: -webkit-transform 0.6s ease-in-out;
-  transition: transform 0.6s ease-in-out;
-  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.6s ease-in-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -6688,7 +6743,7 @@ a.close.disabled {
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: black !important;
+  background-color: #0062cc !important;
 }
 
 .bg-secondary {
@@ -8096,6 +8151,7 @@ button.bg-dark:focus {
 .mt-0,
 .my-0 {
   margin-top: 0 !important;
+	height=:"200hv";
 }
 
 .mr-0,
@@ -8130,6 +8186,7 @@ button.bg-dark:focus {
 .mb-1,
 .my-1 {
   margin-bottom: 0.25rem !important;
+	height: "200hv;
 }
 
 .ml-1,

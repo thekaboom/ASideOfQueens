@@ -584,9 +584,8 @@ pre code {
 }
 
 .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  width: 60%;
+
   margin-right: auto;
   margin-left: auto;
 }
@@ -8152,6 +8151,7 @@ button.bg-dark:focus {
 .mt-0,
 .my-0 {
   margin-top: 0 !important;
+	height=:"200hv";
 }
 
 .mr-0,
@@ -8186,6 +8186,7 @@ button.bg-dark:focus {
 .mb-1,
 .my-1 {
   margin-bottom: 0.25rem !important;
+	height: "200hv;
 }
 
 .ml-1,

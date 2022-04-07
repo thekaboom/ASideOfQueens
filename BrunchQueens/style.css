@@ -21,6 +21,13 @@ header h1 {
   font-size: 5rem;
 }
 
+.bio{
+	overflow: hidden;
+	height: 200px;
+	width: 200px;
+
+
+}
 .header-canvas {
   position: absolute;
   z-index: 1;

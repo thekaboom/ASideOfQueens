@@ -587,7 +587,7 @@ pre code {
   width: 60%;
 
   margin-right: auto;
-  margin-left: auto;
+  margin-left: 6%;
 }
 
 @media (min-width: 576px) {
